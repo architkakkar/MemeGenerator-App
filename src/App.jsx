@@ -1,10 +1,15 @@
 import React from 'react'
+import Navbar from './components/Header'
+import Meme from './components/Meme'
 
 function App() {
   return (
-    <>
-      <h1 className="flex items-center justify-center w-screen h-screen text-2xl font-bold">Hello World!</h1>
-    </>
+    <div className='flex items-center justify-center w-screen h-screen bg-zinc-200'>
+      <div className='font-karla w-[550px] h-[550px] shadow-xl bg-white rounded-sm'>
+        <Navbar />
+        <Meme />
+      </div>
+    </div>
   )
 }
 
