@@ -2,7 +2,6 @@ import React from 'react'
 import memesData from '../memesData'
 
 function Meme() {
-    console.log()
 
     function GetNewMeme() {
         const memesArray = memesData.data.memes;
