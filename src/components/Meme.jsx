@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import memesData from '../memesData'
 
 function Meme() {
+    const [memeImage, setMemeImage] = useState("")
 
     function GetNewMeme() {
         const memesArray = memesData.data.memes;
@@ -9,9 +10,7 @@ function Meme() {
         const randomMeme = memesArray[randomNum]
         const URL = randomMeme.url
 
-        document.querySelector(".meme").setAttribute("src", URL);
-
-        console.log(URL)
+        setMemeImage(URL)
     }
 
     return (
@@ -32,7 +31,7 @@ function Meme() {
                 </div>
             </main>
             <section className='mx-6 mb-10 border border-black rounded-sm '>
-                <img src="" alt="meme-here" className='object-contain w-full h-full meme ' />
+                <img src={memeImage} alt="meme-here" className='object-contain w-full h-full meme ' />
             </section>
         </>
     )
