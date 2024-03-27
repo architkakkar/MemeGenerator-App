@@ -1,7 +1,10 @@
+// Importing React and the logo image
 import React from 'react'
 import Logo from '../assets/troll-face.png'
 
+// Defining the Navbar component
 function Navbar() {
+    // Returning the JSX for the navbar
     return (
         <header className='flex items-center justify-between w-full h-16 px-6 text-white bg-gradient-to-r from-[#672280] to-[#A626D3]'>
             <div className="flex items-center gap-2">

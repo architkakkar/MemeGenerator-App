@@ -1,42 +1,50 @@
+// Importing necessary React hooks and React itself
 import React, { useEffect, useState } from 'react'
 
+// Defining the Meme component
 function Meme() {
+    // State to hold the current meme's text and image
     const [meme, setMeme] = useState({
-        topText: "",
-        bottomText: "",
-        randomImage: "",
+        topText: "", // Top text of the meme
+        bottomText: "", // Bottom text of the meme
+        randomImage: "", // URL of the meme image
     })
+    // State to hold all fetched memes
     const [allMemes, setAllMemes] = useState([])
 
+    // Effect to fetch memes from the API when the component mounts
     useEffect(() => {
         fetch("https://api.imgflip.com/get_memes")
             .then(res => res.json())
-            .then(data => setAllMemes(data.data.memes))
-    }, [])
+            .then(data => setAllMemes(data.data.memes)) // Setting the fetched memes to state
+    }, []) // Empty dependency array means this effect runs once on mount
 
+    // Function to select a random meme from the fetched memes and update the state
     function getNewMeme() {
-        const randomNum = Math.floor(Math.random() * allMemes.length)
-        const url = allMemes[randomNum].url
+        const randomNum = Math.floor(Math.random() * allMemes.length) // Generating a random index
+        const url = allMemes[randomNum].url // Getting the URL of the selected meme
 
         setMeme(prevMeme => {
             return {
-                ...prevMeme,
-                randomImage: url
+                ...prevMeme, // Keeping the previous state values
+                randomImage: url // Updating the randomImage with the new meme's URL
             }
         })
     }
 
+    // Function to handle changes in the input fields for top and bottom text
     function handleChange(event) {
-        const { name, value } = event.target
+        const { name, value } = event.target // Destructuring the name and value from the event target
 
         setMeme(prevMeme => {
             return {
-                ...prevMeme,
-                [name]: value
+                ...prevMeme, // Keeping the previous state values
+                [name]: value // Updating the specific field with the new value
             }
         })
     }
 
+    // Rendering the component
     return (
         <>
             <main className='px-6 py-8'>
@@ -54,7 +62,7 @@ function Meme() {
                     <button onClick={getNewMeme} className='py-2.5 text-white bg-gradient-to-r from-[#672280] to-[#A626D3] font-bold rounded-md hover:opacity-90'>Get a new meme image 🖼️</button>
                 </div>
             </main>
-            {
+            {   // Conditional rendering of the meme image and text
                 meme.randomImage
                 &&
                 <section className='relative mx-6 mb-10 border border-black rounded-sm'>
