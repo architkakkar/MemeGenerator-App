@@ -11,4 +11,4 @@ You can view and interact with the Figma design file by following this link: <a 
 
 ## Preview
 
-<img src="https://github.com/architkakkar/memegenerator-app/blob/main/design/desktop-design.png" alt="desktop-design" width="90%" />
+<img src="https://github.com/architkakkar/memegenerator-app/blob/main/design/desktop-design.png" alt="desktop-design" width="80%" />
