@@ -66,9 +66,9 @@ function Meme() {
                 meme.randomImage
                 &&
                 <section className='relative mx-6 mb-10 border border-black rounded-sm'>
-                    <img src={meme.randomImage} alt="meme-here" className='object-contain w-full h-full meme ' />
-                    <h2 className="absolute top-0 w-full my-4 font-serif text-4xl font-bold text-center uppercase -translate-x-1/2 left-1/2">{meme.topText}</h2>
-                    <h2 className="absolute bottom-0 w-full my-4 font-serif text-4xl font-bold text-center uppercase -translate-x-1/2 left-1/2">{meme.bottomText}</h2>
+                    <img src={meme.randomImage} alt="meme-here" className='object-contain w-full h-full opacity-90' />
+                    <h2 className="absolute top-0 w-full my-4 font-serif text-3xl font-bold text-center text-white uppercase -translate-x-1/2 left-1/2">{meme.topText}</h2>
+                    <h2 className="absolute bottom-0 w-full my-4 font-serif text-3xl font-bold text-center text-white uppercase -translate-x-1/2 left-1/2">{meme.bottomText}</h2>
                 </section>
             }
         </>
